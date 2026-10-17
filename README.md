@@ -1,5 +1,7 @@
 # JobTrack: Job Application Tracker
 
+**🌐 Live demo: https://mirudhulamaruthanayagam27.github.io/job-tracker/** · Source: https://github.com/MirudhulaMaruthanayagam27/job-tracker
+
 Track every job application from **Wishlist → Applied → Interview → Offer** (or Rejected) in one place. Built with **Angular 21**: standalone components, signals, typed reactive forms and lazy-loaded routes. It needs no backend. Data is saved in the browser, so the live demo works anywhere.
 
 ## Features
@@ -50,33 +52,41 @@ Track every job application from **Wishlist → Applied → Interview → Offer*
 | Custom pipe | `shared/time-ago.pipe.ts` ("3 days ago", "In 2 days") |
 | Unit tests (Vitest) | `core/job-utils.spec.ts`: filters, sorting, interview rate, CSV, dates, pipe |
 
-## Run it
+## Run it on any laptop
 
-```powershell
-cd D:\Angular-Fullstack-Portfolio\JobTracker
-npm install        # first time only (or after downloading from GitHub)
-npm start          # http://localhost:4213
-```
+You only need **Node.js** (which includes npm). There's no database, server or API key to set up.
 
-Other commands: `npm test` (8 unit tests) · `npm run build` · `npm run build:pages` (build for GitHub Pages).
+1. Install **Node.js 20.19 or newer** (the LTS version from https://nodejs.org). Check it with `node -v`.
+2. Download the code. Either:
+   - **With Git:**
+     ```powershell
+     git clone https://github.com/MirudhulaMaruthanayagam27/job-tracker.git
+     cd job-tracker
+     ```
+   - **Without Git:** on the repository page, click **Code → Download ZIP**, unzip it, and open a terminal in that folder.
+3. Install the packages. This is needed once after every download, because `node_modules` is not stored in GitHub. It takes about 2 minutes.
+   ```powershell
+   npm install
+   ```
+4. Start the app:
+   ```powershell
+   npm start
+   ```
+   Then open **http://localhost:4213**.
 
-`.npmrc` sets `legacy-peer-deps=true`, which works around an npm 10 install bug.
+Other commands:
+- `npm test` runs the 8 unit tests.
+- `npm run build` makes a production build.
+- `npm run build:pages` makes a build for GitHub Pages.
+
+`.npmrc` sets `legacy-peer-deps=true`, which works around an npm 10 install bug, so `npm install` works the same on every machine.
 
 ## Publish on GitHub Pages (live demo)
 
-1. Create a **public** repository named **`job-tracker`** on GitHub. Don't add a README.
-2. Push this folder:
-   ```powershell
-   cd D:\Angular-Fullstack-Portfolio\JobTracker
-   git init
-   git add .
-   git commit -m "Job Application Tracker"
-   git branch -M main
-   git remote add origin https://github.com/MirudhulaMaruthanayagam27/job-tracker.git
-   git push -u origin main
-   ```
-3. In the repository, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
-4. Open the **Actions** tab. The "Deploy to GitHub Pages" workflow tests, builds and publishes the app, which takes about 2 minutes. Re-run it once if the first run happened before step 3.
-5. Live demo: **https://mirudhulamaruthanayagam27.github.io/job-tracker/**
+The code is in the repository on the branch **`feat/job-tracker`**. To publish it:
 
-Every later `git push` updates the live site automatically.
+1. In the repository, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+2. Open the **Actions** tab → **Deploy to GitHub Pages** → **Run workflow**, choose the branch **`feat/job-tracker`**, and click **Run workflow**. It tests, builds and publishes the app in about 2 minutes.
+3. Live demo: **https://mirudhulamaruthanayagam27.github.io/job-tracker/**
+
+After you merge into `main`, every push to `main` republishes the site automatically (see `.github/workflows/deploy.yml`).
