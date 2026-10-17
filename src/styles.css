@@ -1,0 +1,67 @@
+/* Colors: change here to restyle the app. */
+:root {
+  --brand: #4f46e5;
+  --brand-2: #7c3aed;
+  --brand-soft: #eef2ff;
+  --ink: #0f172a;
+  --text: #1e293b;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --danger: #dc2626;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -12px rgba(15, 23, 42, 0.12);
+}
+
+/* One color pair per status (used by badges, chips, the pipeline bar). */
+[data-status='Wishlist'] { --s-bg: #f1f5f9; --s-fg: #475569; --s-solid: #94a3b8; }
+[data-status='Applied'] { --s-bg: #e0f2fe; --s-fg: #0369a1; --s-solid: #0ea5e9; }
+[data-status='Interview'] { --s-bg: #fef3c7; --s-fg: #b45309; --s-solid: #f59e0b; }
+[data-status='Offer'] { --s-bg: #dcfce7; --s-fg: #15803d; --s-solid: #22c55e; }
+[data-status='Rejected'] { --s-bg: #ffe4e6; --s-fg: #be123c; --s-solid: #f43f5e; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { color: var(--ink); margin: 0; letter-spacing: -0.02em; }
+a { color: var(--brand); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--brand) 55%, transparent); outline-offset: 2px; border-radius: 8px; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.muted { color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 9px 16px;
+  border-radius: 12px; border: 1px solid transparent; background: var(--brand); color: #fff; font-weight: 700; cursor: pointer;
+  text-decoration: none; white-space: nowrap; transition: background-color .15s, transform .15s, box-shadow .15s;
+}
+.btn:hover { background: #4338ca; box-shadow: 0 6px 16px -6px rgba(79, 70, 229, .6); }
+.btn:active { transform: translateY(1px); }
+.btn-ghost { background: var(--card); color: var(--text); border-color: var(--line); }
+.btn-ghost:hover { background: var(--brand-soft); box-shadow: none; }
+.btn-danger { background: var(--card); color: var(--danger); border-color: #fecaca; }
+.btn-danger:hover { background: #fef2f2; box-shadow: none; }
+.btn-sm { min-height: 34px; padding: 6px 12px; font-size: 13.5px; border-radius: 10px; }
+.btn svg, .icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+input[type='text'], input[type='url'], input[type='date'], input[type='search'], select, textarea {
+  width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: #fff;
+  transition: border-color .15s, box-shadow .15s;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 4px var(--brand-soft); }
+textarea { resize: vertical; min-height: 96px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
