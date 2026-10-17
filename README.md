@@ -102,4 +102,4 @@ The code is in the repository on the branch **`feat/job-tracker`**. To publish i
 2. Open the **Actions** tab → **Deploy to GitHub Pages** → **Run workflow**, choose the branch **`feat/job-tracker`**, and click **Run workflow**. It tests, builds and publishes the app in about 2 minutes.
 3. Live demo: **https://mirudhulamaruthanayagam27.github.io/job-tracker/**
 
-After you merge into `main`, every push to `main` republishes the site automatically (see `.github/workflows/deploy.yml`).
+Every push to `feat/job-tracker` or `main` republishes the site automatically (see `.github/workflows/deploy.yml`).

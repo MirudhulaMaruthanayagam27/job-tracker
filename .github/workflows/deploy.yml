@@ -1,10 +1,10 @@
-# Tests, builds and publishes the app to GitHub Pages on every push to main.
+# Tests, builds and publishes the app to GitHub Pages on every push to main or feat/job-tracker.
 # One-time setup: repository Settings → Pages → Source: "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, feat/job-tracker]
   workflow_dispatch:
 
 permissions:
