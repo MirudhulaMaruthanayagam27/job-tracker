@@ -2,6 +2,19 @@
 
 **🌐 Live demo: https://mirudhulamaruthanayagam27.github.io/job-tracker/** · Source: https://github.com/MirudhulaMaruthanayagam27/job-tracker
 
+## Quick start
+
+Needs **Node.js 20.19+**. Run these in a terminal:
+
+```powershell
+git clone https://github.com/MirudhulaMaruthanayagam27/job-tracker.git
+cd job-tracker
+npm install     # once after every download, takes ~2 minutes
+npm start       # open http://localhost:4213
+```
+
+More detail is in [Run it on any laptop](#run-it-on-any-laptop).
+
 Track every job application from **Wishlist → Applied → Interview → Offer** (or Rejected) in one place. Built with **Angular 21**: standalone components, signals, typed reactive forms and lazy-loaded routes. It needs no backend. Data is saved in the browser, so the live demo works anywhere.
 
 ## Features
